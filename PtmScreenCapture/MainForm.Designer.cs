@@ -34,6 +34,7 @@
             this.stopBtn = new System.Windows.Forms.Button();
             this.storyCB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.screenshotBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loginBtn
@@ -65,7 +66,7 @@
             this.startBtn.Location = new System.Drawing.Point(24, 103);
             this.startBtn.Margin = new System.Windows.Forms.Padding(4);
             this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(111, 46);
+            this.startBtn.Size = new System.Drawing.Size(86, 46);
             this.startBtn.TabIndex = 2;
             this.startBtn.Text = "Старт";
             this.startBtn.UseVisualStyleBackColor = true;
@@ -74,10 +75,10 @@
             // stopBtn
             // 
             this.stopBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.stopBtn.Location = new System.Drawing.Point(222, 103);
+            this.stopBtn.Location = new System.Drawing.Point(282, 104);
             this.stopBtn.Margin = new System.Windows.Forms.Padding(4);
             this.stopBtn.Name = "stopBtn";
-            this.stopBtn.Size = new System.Drawing.Size(111, 45);
+            this.stopBtn.Size = new System.Drawing.Size(84, 45);
             this.stopBtn.TabIndex = 3;
             this.stopBtn.Text = "Стоп";
             this.stopBtn.UseVisualStyleBackColor = true;
@@ -87,7 +88,7 @@
             this.storyCB.FormattingEnabled = true;
             this.storyCB.Location = new System.Drawing.Point(24, 45);
             this.storyCB.Name = "storyCB";
-            this.storyCB.Size = new System.Drawing.Size(309, 29);
+            this.storyCB.Size = new System.Drawing.Size(369, 29);
             this.storyCB.TabIndex = 4;
             // 
             // label1
@@ -99,11 +100,22 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "История/задача";
             // 
+            // screenshotBtn
+            // 
+            this.screenshotBtn.Location = new System.Drawing.Point(160, 105);
+            this.screenshotBtn.Name = "screenshotBtn";
+            this.screenshotBtn.Size = new System.Drawing.Size(75, 45);
+            this.screenshotBtn.TabIndex = 6;
+            this.screenshotBtn.Text = "Снимок";
+            this.screenshotBtn.UseVisualStyleBackColor = true;
+            this.screenshotBtn.Click += new System.EventHandler(this.screenshotBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 175);
+            this.ClientSize = new System.Drawing.Size(564, 162);
+            this.Controls.Add(this.screenshotBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.storyCB);
             this.Controls.Add(this.stopBtn);
@@ -127,5 +139,6 @@
         private Button stopBtn;
         private ComboBox storyCB;
         private Label label1;
+        private Button screenshotBtn;
     }
 }
