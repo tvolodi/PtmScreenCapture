@@ -35,6 +35,7 @@
             this.storyCB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.screenshotBtn = new System.Windows.Forms.Button();
+            this.adminBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loginBtn
@@ -110,11 +111,22 @@
             this.screenshotBtn.UseVisualStyleBackColor = true;
             this.screenshotBtn.Click += new System.EventHandler(this.screenshotBtn_Click);
             // 
+            // adminBtn
+            // 
+            this.adminBtn.Location = new System.Drawing.Point(417, 184);
+            this.adminBtn.Name = "adminBtn";
+            this.adminBtn.Size = new System.Drawing.Size(111, 46);
+            this.adminBtn.TabIndex = 7;
+            this.adminBtn.Text = "Admin";
+            this.adminBtn.UseVisualStyleBackColor = true;
+            this.adminBtn.Click += new System.EventHandler(this.adminBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 162);
+            this.ClientSize = new System.Drawing.Size(564, 259);
+            this.Controls.Add(this.adminBtn);
             this.Controls.Add(this.screenshotBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.storyCB);
@@ -140,5 +152,6 @@
         private ComboBox storyCB;
         private Label label1;
         private Button screenshotBtn;
+        private Button adminBtn;
     }
 }

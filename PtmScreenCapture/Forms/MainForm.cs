@@ -6,6 +6,7 @@ namespace PtmScreenCapture
     public partial class MainForm : Form
     {
 
+        private AdminForm adminForm = new AdminForm();
 
         public MainForm()
         {
@@ -53,6 +54,12 @@ namespace PtmScreenCapture
             return bmp;
 
             
+        }
+
+        private void adminBtn_Click(object sender, EventArgs e)
+        {
+            adminForm.Show();            
+
         }
     }
 }
