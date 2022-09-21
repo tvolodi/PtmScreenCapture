@@ -35,7 +35,9 @@ namespace PtmScreenCapture
             });
 
             bindingSource = new BindingSource(userList, null);
+
             usersDG.DataSource = bindingSource;
+
             var columns = usersDG.Columns;
             for (int i = 0; i < columns.Count; i++)
             {
@@ -79,9 +81,24 @@ namespace PtmScreenCapture
         private void usersDG_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             // Check for the previous row has to be saved
+            //var prevRecord = (sender as DataGridView).data
+
+            //var fromListCurrentRow = bindingSource.Current;
+
+            var currRow = (User)bindingSource[e.RowIndex];
+
+            var prevRow = (User)bindingSource[prevRowIndex];
 
 
             var currentRow = usersDG.Rows[e.RowIndex];
+
+            bool isSame = currRow.Equals(prevRow);
+            if(!isSame)
+            {
+
+            }
+
+
 
             //prevValuesList = new List<object>();
 
@@ -137,6 +154,11 @@ namespace PtmScreenCapture
             //        await RestApiService.UpdateMongoDocAsync<UserRole>(userRole);
             //    }
             //}
+        }
+
+        private void usersDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

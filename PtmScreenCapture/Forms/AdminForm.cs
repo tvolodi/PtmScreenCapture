@@ -21,7 +21,7 @@ namespace PtmScreenCapture
         {
             InitializeComponent();
             UserRoleForm = new UserRoleForm();
-            UsersForm = new UsersForm();
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -37,6 +37,7 @@ namespace PtmScreenCapture
 
         private void usersBtn_Click(object sender, EventArgs e)
         {
+            UsersForm = new UsersForm();
             UsersForm.Show();
         }
     }

@@ -40,6 +40,7 @@
             this.usersDG.RowTemplate.Height = 25;
             this.usersDG.Size = new System.Drawing.Size(776, 150);
             this.usersDG.TabIndex = 0;
+            this.usersDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDG_CellContentClick);
             this.usersDG.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDG_RowEnter);
             this.usersDG.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDG_RowLeave);
             this.usersDG.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.usersDG_UserDeletingRow);
