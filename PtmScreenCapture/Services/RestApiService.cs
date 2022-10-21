@@ -1,9 +1,11 @@
 ﻿using PtmScreenCapture.Models;
 using RestSharp;
+using RestSharp.Serializers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,6 +41,14 @@ namespace PtmScreenCapture.Services
             RestRequest request = new RestRequest(typeof(T).Name, Method.Delete);
             request.AddQueryParameter("id", id);
             var response = await restClient.DeleteAsync(request);
+        }
+
+        public static async Task SendScreenAsync(string screenShotFileName)
+        {
+            RestRequest request = new RestRequest("screenshot", Method.Post);
+            request.AddHeader("Content-Type", "multipart/form-data");
+            request.AddFile("filenamepath", screenShotFileName, "image/jpeg");
+            var response = await restClient.ExecuteAsync(request);
         }
     }
 }

@@ -1,4 +1,6 @@
+using PtmScreenCapture.Services;
 using System.Drawing.Imaging;
+using System.Reflection;
 
 namespace PtmScreenCapture
 {
@@ -35,7 +37,7 @@ namespace PtmScreenCapture
             
             timer.Tick += new EventHandler(TimerEventProcessor);
             timer.Interval = timerInterval;
-            timer.Start();
+            timer.Start();  
 
             Application.Run(new MainForm());
         }
@@ -62,12 +64,19 @@ namespace PtmScreenCapture
 
         }
 
-        static public void processScreenShot()
+        static public async void processScreenShot()
         {
+            string fileName = "last_screenshot.jpeg";
+
             var screenImage = getScreen();
 
-            screenImage.Save("last_screenshot.jpeg", ImageFormat.Jpeg);
+            screenImage.Save(fileName, ImageFormat.Jpeg);
 
+            var currentPath = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+
+            string fullFileName = Path.Combine(currentPath, fileName);
+
+            await RestApiService.SendScreenAsync(fullFileName);
 
         }
 
